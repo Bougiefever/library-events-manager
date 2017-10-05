@@ -4,7 +4,6 @@ import { EventListComponent } from "./event/event-list/event-list.component";
 import { EventDetailComponent } from "./event/event-detail/event-detail.component";
 import { EventResolver } from "./shared/services/event-resolver";
 import { InstructorListComponent } from "./instructor/instructor-list/instructor-list.component";
-import { ScheduledEventListComponent } from "./scheduled-event/scheduled-event-list/scheduled-event-list.component";
 import { InstructorDetailComponent } from "./instructor/instructor-detail/instructor-detail.component";
 import { InstructorResolver } from "./shared/services/instructor-resolver";
 import { InstructorEditComponent } from "./instructor/instructor-edit/instructor-edit.component";
@@ -13,6 +12,7 @@ import { EventNewComponent } from "./event/event-new/event-new.component";
 import { EventEditComponent } from "./event/event-edit/event-edit.component";
 import { ScheduleEventComponent } from "./scheduled-event/schedule-event/schedule-event.component";
 import { ScheduleNewComponent } from "./scheduled-event/schedule-new/schedule-new.component";
+import { CalendarComponent } from "./scheduled-event/calendar/calendar.component";
 
 export const routes: Route[] = [
     {
@@ -90,6 +90,10 @@ export const routes: Route[] = [
     {
       path: 'new-schedule',
       component: ScheduleNewComponent
+    },
+    {
+      path: 'calendar',
+      component: CalendarComponent
     },
     {
       path: '',

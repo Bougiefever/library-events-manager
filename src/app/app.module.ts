@@ -12,7 +12,6 @@ import { EventListComponent } from './event/event-list/event-list.component';
 import { Route, RouterModule } from "@angular/router";
 import { InstructorListComponent } from './instructor/instructor-list/instructor-list.component';
 
-import { ScheduledEventListComponent } from "./scheduled-event/scheduled-event-list/scheduled-event-list.component";
 import { EventsService, InstructorsService } from "./shared/services";
 import { environment } from '../environments/environment';
 
@@ -46,13 +45,13 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LinkToEventComponent } from './instructor/link-to-event/link-to-event.component';
 import { LinkToInstructorComponent } from './event/link-to-instructor/link-to-instructor.component';
+import { CalendarComponent } from './scheduled-event/calendar/calendar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventListComponent,
     InstructorListComponent,
-    ScheduledEventListComponent,
     EventDetailComponent,
     HomeComponent,
     EventEditComponent,
@@ -70,7 +69,8 @@ import { LinkToInstructorComponent } from './event/link-to-instructor/link-to-in
     LoginComponent,
     RegisterComponent,
     LinkToEventComponent,
-    LinkToInstructorComponent
+    LinkToInstructorComponent,
+    CalendarComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { MessagingService } from './shared/services/messaging.service';
 import { MdSnackBar } from '@angular/material';
 import { AuthService } from './shared/services/auth.service';
@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
   constructor(
     private messagingService: MessagingService,
     private authService: AuthService,
-    private snackBar: MdSnackBar
+    private snackBar: MdSnackBar,
+    private element: ElementRef,
   ) {
 
   }

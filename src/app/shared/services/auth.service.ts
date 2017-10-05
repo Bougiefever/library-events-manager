@@ -35,21 +35,25 @@ export class AuthService {
     .catch(error => console.log(error));
   }
 
+
+  googleSignIn() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return this.angularFireAuth.auth.signInWithPopup(provider)
+      .then((credential) =>  {
+          this.authState = credential.user;
+          console.log(credential.user.uid);
+          this.snackbar.open("Logged in with Google", "", {
+            duration:3000
+          });
+      })
+      .catch(error => console.log(error));
+  }  
+  
   logout() {
     this.angularFireAuth.auth.signOut()
       .then(() => this.authState = null)
       .catch(error => console.log(error));;
   }
 
-  googleSignIn() {
-    const provider = new firebase.auth.GoogleAuthProvider()
-    return this.angularFireAuth.auth.signInWithPopup(provider)
-      .then((credential) =>  {
-          this.authState = credential.user;
-          this.snackbar.open("Logged in with Google", "", {
-            duration:3000
-          });
-      })
-      .catch(error => console.log(error));
-  }
+
 }
