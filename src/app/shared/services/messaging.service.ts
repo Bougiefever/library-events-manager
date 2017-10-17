@@ -50,13 +50,11 @@ export class MessagingService {
         equalTo: uid
       }
     }).subscribe(t => {
-      console.log(t);
+      console.log('save token ',t, ' for user id ', uid);
       if ((t.length == 0)) {
         this.database.list('tokens/').push(data);
       }
     });
-
-    //list.push(data)
   }
 
   receiveMessage() {

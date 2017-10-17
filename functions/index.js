@@ -39,6 +39,8 @@ exports.notifyScheduledEventFunction = functions.database.ref('/scheduledEvents/
     .then(tokens => { 
       tokens.forEach(function(token) {
         var data = token.val();
+        console.log('send message to ', data.token);
+        console.log('message to send', payload);
         admin.messaging().sendToDevice(data.token, payload)
           .then(res => {
             console.log("Sent Successfully", res);
