@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { FirebaseApp } from 'angularfire2';
 import { ScheduledEvent } from '../models';
+import * as firebase from 'firebase';
 
 @Injectable()
 export class ScheduleService {

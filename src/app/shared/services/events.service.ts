@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Http } from "@angular/http";
 
 import { Observable } from 'rxjs/Rx';
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase } from "angularfire2/database-deprecated";
 import { LibraryEvent } from "../models";
 import { environment } from '../../../environments/environment';
 import 'rxjs/add/operator/filter';

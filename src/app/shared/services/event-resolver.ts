@@ -8,7 +8,7 @@ import { EventsService } from "./events.service";
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/first';
-import { FirebaseObjectObservable, AngularFireDatabase } from 'angularfire2/database';
+import { FirebaseObjectObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 import { FirebaseApp } from 'angularfire2';
 
 @Injectable()

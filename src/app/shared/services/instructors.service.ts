@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireDatabase } from "angularfire2/database-deprecated";
 import { Observable } from "rxjs/Rx";
 import 'rxjs/add/observable/fromPromise';
 import { Instructor } from "../models";
