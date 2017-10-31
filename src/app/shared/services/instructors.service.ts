@@ -1,5 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
-import { AngularFireDatabase } from "angularfire2/database-deprecated";
+//import { AngularFireDatabase } from "angularfire2/database-deprecated";
+//import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
 import { Observable } from "rxjs/Rx";
 import 'rxjs/add/observable/fromPromise';
 import { Instructor } from "../models";
@@ -10,14 +12,16 @@ export class InstructorsService {
 
   firebaseApp: FirebaseApp;
 
-  constructor(private db: AngularFireDatabase, 
+  constructor(private fs: AngularFirestore, 
     @Inject(FirebaseApp) firebaseApp: FirebaseApp) {
       this.firebaseApp = firebaseApp;
   }
 
   getAllInstructors() : Observable<Instructor[]> {
-    return this.db.list('instructors')
-      .map(Instructor.jsonArrayToObjectArray);
+    const its = this.fs.collection<Instructor>('instructors');
+
+    // return this.db.list('instructors')
+    //   .map(Instructor.jsonArrayToObjectArray);
   }
 
   getInstructorByUsername(username: string) : Observable<Instructor> {
